@@ -37,6 +37,7 @@ let port = 3000;
 
 app.listen(port, () => {
     console.log('listening on port 3000');
+    
     db.sync()
     .then(() => {
         console.log('Synchronated the database');
