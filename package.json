@@ -12,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "bluebird": "^3.5.1",
+    "nodemon": "^1.12.1",
+    "sequelize": "^4.22.11",
     "webpack": "^3.6.0"
   },
   "dependencies": {
