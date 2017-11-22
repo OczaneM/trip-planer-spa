@@ -35,12 +35,12 @@ app.use((err, req, res, next) => {
     res.status(err.status || 500).send(err.message || 'Oh no! Internal server Error');
 });
 
-//listening 
+//listening
 let port = 3000;
 
 app.listen(port, () => {
     console.log('listening on port 3000');
-    
+
     db.sync()
     .then(() => {
         console.log('Synchronated the database');

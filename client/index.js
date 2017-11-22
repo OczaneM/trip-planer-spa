@@ -15,3 +15,9 @@ const map = new mapboxgl.Map({
 
 const marker = buildMarker("activities", fullstackCoords);
 marker.addTo(map);
+
+const selectArr = [...document.getElementsByTagName('select')];
+selectArr.forEach(selectTag => {
+
+  })
+});
