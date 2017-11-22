@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
     const activities = models.Activity.findAll();
     const restaurants = models.Restaurant.findAll();
     Promise.all([hotels, activities, restaurants])
-        .then(array => res.json(array))
+        .then(([hotels, activities, restaurants]) => res.json({hotels, activities, restaurants}))
         .catch(next);
 }) 
 
