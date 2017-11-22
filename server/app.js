@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const {db} = require('./models');
-
+const apiRouter = require('./api.js')
 const app = express();
 
 //configuration middleware
@@ -13,11 +13,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use('/api', apiRouter);
 
 //SP application routing
 app.get('/', (req, res, next) => {
     res.render('index.html');
 })
+
+
 
 
 //error-handling middleware
