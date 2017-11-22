@@ -16,8 +16,31 @@ const map = new mapboxgl.Map({
 const marker = buildMarker("activities", fullstackCoords);
 marker.addTo(map);
 
-const selectArr = [...document.getElementsByTagName('select')];
-selectArr.forEach(selectTag => {
 
-  })
-});
+
+const selectArr = [...document.getElementsByTagName('select')];
+
+
+const idArr = [];
+selectArr.forEach(el => {
+  idArr.push(el.id);
+})
+
+
+fetch('/api')
+  .then(result => result.json())
+  .then(data => {
+      // let hotels = new Option("Hotels", data.hotels);
+      let parent = selectArr[0];
+
+      for (index in data.hotels) {
+        let hotelOption = new Option(data.hotels[index].name, data.hotels[index].name)
+        parent.appendChild(hotelOption);
+      }
+      
+      // console.log(hotels);
+      //go thru data
+      //create option (Option constructor) && add it to the correct select
+      
+
+  });
